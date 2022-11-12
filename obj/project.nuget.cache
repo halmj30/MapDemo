@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "91aiXxsQApMRFz0gJKpgvgrI6tkHcAOJP/jNCFVPdTrPRFe8tI+2unMgP+aQlUqW7ASRZLUZJp0Do7rz4YBTow==",
+  "dgSpecHash": "akHO1QxDZLVdcnjizMpteaB4PnWUxOP1VbLSWLaxOmq0KVIftf5LuWp1bLDkTkY0p8+Y5erB7N2d6EEas2K1RQ==",
   "success": true,
   "projectFilePath": "C:\\School\\CS\\341\\Team5\\MapDemo\\MapDemo.csproj",
   "expectedPackageFiles": [
@@ -96,9 +96,14 @@
     "C:\\Users\\Jack\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.13\\xamarin.androidx.viewpager.1.0.0.13.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.15\\xamarin.androidx.viewpager2.1.0.0.15.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\xamarin.androidx.window\\1.0.0.8\\xamarin.androidx.window.1.0.0.8.nupkg.sha512",
+    "C:\\Users\\Jack\\.nuget\\packages\\xamarin.build.download\\0.11.3\\xamarin.build.download.0.11.3.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\xamarin.google.android.material\\1.6.0\\xamarin.google.android.material.1.6.0.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\xamarin.google.crypto.tink.android\\1.6.1.6\\xamarin.google.crypto.tink.android.1.6.1.6.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.5\\xamarin.google.guava.listenablefuture.1.0.0.5.nupkg.sha512",
+    "C:\\Users\\Jack\\.nuget\\packages\\xamarin.googleplayservices.base\\118.1.0\\xamarin.googleplayservices.base.118.1.0.nupkg.sha512",
+    "C:\\Users\\Jack\\.nuget\\packages\\xamarin.googleplayservices.basement\\118.1.0\\xamarin.googleplayservices.basement.118.1.0.nupkg.sha512",
+    "C:\\Users\\Jack\\.nuget\\packages\\xamarin.googleplayservices.maps\\118.1.0\\xamarin.googleplayservices.maps.118.1.0.nupkg.sha512",
+    "C:\\Users\\Jack\\.nuget\\packages\\xamarin.googleplayservices.tasks\\118.0.2\\xamarin.googleplayservices.tasks.118.0.2.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\xamarin.jetbrains.annotations\\23.0.0.3\\xamarin.jetbrains.annotations.23.0.0.3.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\xamarin.kotlin.stdlib\\1.6.20.1\\xamarin.kotlin.stdlib.1.6.20.1.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\xamarin.kotlin.stdlib.common\\1.6.20.1\\xamarin.kotlin.stdlib.common.1.6.20.1.nupkg.sha512",

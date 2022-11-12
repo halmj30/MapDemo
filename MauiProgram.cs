@@ -1,4 +1,5 @@
-﻿namespace MapDemo;
+﻿using MapDemo.Handlers;
+namespace MapDemo;
 
 public static class MauiProgram
 {
@@ -12,7 +13,11 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			})
-			.UseMauiMaps();
+            .UseMauiMaps()
+            .ConfigureMauiHandlers(handlers =>
+			{
+				handlers.AddHandler(typeof(MapView), typeof(MapHandler));
+			});
 
 		return builder.Build();
 	}

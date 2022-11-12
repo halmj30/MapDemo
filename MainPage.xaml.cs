@@ -1,5 +1,4 @@
-﻿using Map = Microsoft.Maui.Controls.Maps.Map;
-namespace MapDemo;
+﻿namespace MapDemo;
 
 public partial class MainPage : ContentPage
 {

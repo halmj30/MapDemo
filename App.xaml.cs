@@ -6,6 +6,14 @@ public partial class App : Application
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+		MainPage = new MapsPage();
+	}
+}
+
+public	class MapsPage : ContentPage
+{
+	public MapsPage()
+	{
+		Content = new Microsoft.Maui.Controls.Maps.Map();
 	}
 }
