@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/71AZsAY8PhizFEXIIhKVtJf8TjqXqrGj7vCuZWBkTTSpxepsGMbwO+GZRt97lP6Rw/wxMM1ZDb0QMxf99WsLA==",
+  "dgSpecHash": "91aiXxsQApMRFz0gJKpgvgrI6tkHcAOJP/jNCFVPdTrPRFe8tI+2unMgP+aQlUqW7ASRZLUZJp0Do7rz4YBTow==",
   "success": true,
   "projectFilePath": "C:\\School\\CS\\341\\Team5\\MapDemo\\MapDemo.csproj",
   "expectedPackageFiles": [
@@ -14,10 +14,12 @@
     "C:\\Users\\Jack\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\microsoft.graphics.win2d\\1.0.3.1\\microsoft.graphics.win2d.1.0.3.1.nupkg.sha512",
+    "C:\\Users\\Jack\\.nuget\\packages\\microsoft.maui.controls.maps\\7.0.49\\microsoft.maui.controls.maps.7.0.49.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\microsoft.maui.dependencies\\6.0.541\\microsoft.maui.dependencies.6.0.541.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\microsoft.maui.extensions\\6.0.541\\microsoft.maui.extensions.6.0.541.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\microsoft.maui.graphics\\6.0.501\\microsoft.maui.graphics.6.0.501.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\microsoft.maui.graphics.win2d.winui.desktop\\6.0.501\\microsoft.maui.graphics.win2d.winui.desktop.6.0.501.nupkg.sha512",
+    "C:\\Users\\Jack\\.nuget\\packages\\microsoft.maui.maps\\7.0.49\\microsoft.maui.maps.7.0.49.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22000.194\\microsoft.windows.sdk.buildtools.10.0.22000.194.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\microsoft.windowsappsdk\\1.1.3\\microsoft.windowsappsdk.1.1.3.nupkg.sha512",
     "C:\\Users\\Jack\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
