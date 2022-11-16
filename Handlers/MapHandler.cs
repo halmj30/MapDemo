@@ -1,17 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#if IOS || MACCATALYST
+using PlatformView = MapKit.MKMapView;
+#elif ANDROID
+using Android.Gms.Maps;
+using PlatformView = Android.Gms.Maps.MapView;
+#elif WINDOWS
+using PlatformView = Microsoft.UI.Xaml.FrameworkElement;
+#elif (NETSTANDARD || !PLATFORM) || (NET6_0 && !IOS && !ANDROID)
+using PlatformView = System.Object;
+#endif
+using Microsoft.Maui.Handlers;
+using IMap = MapDemo.Controls.IMap;
 
-namespace MapDemo.Handlers
+namespace MapDemo.Handlers;
+
+public partial class MapHandler : IMapHandler
 {
-    partial class MapHandler
+    public static IPropertyMapper<IMap, IMapHandler> Mapper = new PropertyMapper<IMap, IMapHandler>(ViewHandler.ViewMapper)
     {
-        public static IPropertyMapper<MapView, MapHandler> MapMapper = new PropertyMapper<MapView, MapHandler>(ViewMapper)
-        { };
+        [nameof(IMap.MapType)] = MapMapType,
+        [nameof(IMap.IsShowingUser)] = MapIsShowingUser,
+        [nameof(IMap.HasScrollEnabled)] = MapHasScrollEnabled,
+        [nameof(IMap.HasTrafficEnabled)] = MapHasTrafficEnabled,
+        [nameof(IMap.HasZoomEnabled)] = MapHasZoomEnabled
+    };
 
-        public MapHandler() : base(MapMapper)
-        { }
+    IMap IMapHandler.VirtualView => VirtualView;
+
+    PlatformView IMapHandler.PlatformView => PlatformView;
+    
+    public MapHandler() : base(Mapper)
+    {
     }
 }
