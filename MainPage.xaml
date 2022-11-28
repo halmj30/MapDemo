@@ -9,7 +9,7 @@
           Margin="10">
         <controls:Map x:Name="map" 
                       Grid.ColumnSpan="4"
-                      IsShowingUser="{Binding IsToggled, Source={x:Reference showUserSwitch}}"
+                      IsShowingUser="True"
                       HasTrafficEnabled="{Binding IsToggled, Source={x:Reference showTrafficSwitch}}"
                       HasZoomEnabled="{Binding IsToggled, Source={x:Reference zoomEnabledSwitch}}"
                       HasScrollEnabled="{Binding IsToggled, Source={x:Reference scrollEnabledSwitch}}" />
@@ -17,7 +17,7 @@
                Text="Show user:" />
         <Switch x:Name="showUserSwitch"
                 Grid.Row="1"
-                Grid.Column="1" />
+                Grid.Column="1"/>
         <Label Text="Show traffic:"
                Grid.Row="1"
                Grid.Column="2" />
@@ -28,7 +28,8 @@
                Grid.Row="2" />
         <Switch x:Name="zoomEnabledSwitch"
                 Grid.Row="2"
-                Grid.Column="1" />
+                Grid.Column="1"
+                IsToggled="True"/>
         <Label Text="Scroll enabled:"
                Grid.Row="2"
                Grid.Column="2" />

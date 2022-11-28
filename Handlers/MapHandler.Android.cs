@@ -1,6 +1,7 @@
 ﻿using Android;
 using Android.Content;
 using Android.Content.PM;
+using Android.Gms.Common.Apis;
 using Android.Gms.Maps;
 using AndroidX.Core.Content;
 using MapDemo.Controls;
@@ -54,7 +55,7 @@ namespace MapDemo.Handlers
 #pragma warning restore CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
             if (googleMap == null)
                 return;
-
+            /*
             googleMap.MapType = map.MapType switch
             {
                 MapType.Street => GoogleMap.MapTypeNormal,
@@ -62,6 +63,8 @@ namespace MapDemo.Handlers
                 MapType.Hybrid => GoogleMap.MapTypeHybrid,
                 _ => throw new ArgumentOutOfRangeException()
             };
+            */
+            googleMap.MapType = GoogleMap.MapTypeHybrid; //hard coded
         }
 
         public static void MapIsShowingUser(IMapHandler handler, IMap map)
@@ -75,6 +78,18 @@ namespace MapDemo.Handlers
             if (handler?.MauiContext?.Context == null)
                 return;
 
+            var coarseLocationPermission = ContextCompat.CheckSelfPermission(handler.MauiContext.Context, Manifest.Permission.AccessCoarseLocation);
+            var fineLocationPermission = ContextCompat.CheckSelfPermission(handler.MauiContext.Context, Manifest.Permission.AccessFineLocation);
+
+            if (coarseLocationPermission == Permission.Granted || fineLocationPermission == Permission.Granted)
+                googleMap.MyLocationEnabled = googleMap.UiSettings.MyLocationButtonEnabled = true;
+            else
+            {
+                Debug.WriteLine("Missing location permissions for IsShowingUser.");
+                googleMap.MyLocationEnabled = googleMap.UiSettings.MyLocationButtonEnabled = true;
+            }
+
+            /*
             if (map.IsShowingUser)
             {
                 var coarseLocationPermission = ContextCompat.CheckSelfPermission(handler.MauiContext.Context, Manifest.Permission.AccessCoarseLocation);
@@ -92,6 +107,7 @@ namespace MapDemo.Handlers
             {
                 googleMap.MyLocationEnabled = googleMap.UiSettings.MyLocationButtonEnabled = false;
             }
+            */
         }
 
         public static void MapHasScrollEnabled(IMapHandler handler, IMap map)
@@ -102,7 +118,8 @@ namespace MapDemo.Handlers
             if (googleMap == null)
                 return;
 
-            googleMap.UiSettings.ScrollGesturesEnabled = map.HasScrollEnabled;
+            googleMap.UiSettings.ScrollGesturesEnabled = true;
+            //googleMap.UiSettings.ScrollGesturesEnabled = map.HasScrollEnabled;
         }
 
         public static void MapHasTrafficEnabled(IMapHandler handler, IMap map)
@@ -113,7 +130,8 @@ namespace MapDemo.Handlers
             if (googleMap == null)
                 return;
 
-            googleMap.TrafficEnabled = map.HasTrafficEnabled;
+            googleMap.TrafficEnabled = false;
+            //googleMap.TrafficEnabled = map.HasTrafficEnabled;
         }
 
         public static void MapHasZoomEnabled(IMapHandler handler, IMap map)
@@ -124,15 +142,18 @@ namespace MapDemo.Handlers
             if (googleMap == null)
                 return;
 
-            googleMap.UiSettings.ZoomControlsEnabled = map.HasZoomEnabled;
-            googleMap.UiSettings.ZoomGesturesEnabled = map.HasZoomEnabled;
+            googleMap.UiSettings.ZoomControlsEnabled = true;
+            //googleMap.UiSettings.ZoomGesturesEnabled = map.HasZoomEnabled;
         }
 
         internal void OnMapReady(GoogleMap map)
         {
             if (map == null)
                 return;
-
+            map.UiSettings.MyLocationButtonEnabled = true;
+            map.UiSettings.ScrollGesturesEnabled = true;
+            map.UiSettings.ZoomControlsEnabled = true;
+            map.MapType = GoogleMap.MapTypeHybrid; //hard coded
             Map = map;
         }
     }
@@ -152,6 +173,9 @@ namespace MapDemo.Handlers
         public void OnMapReady(GoogleMap googleMap)
         {
             _googleMap = googleMap;
+            googleMap.UiSettings.MyLocationButtonEnabled = true;
+            googleMap.UiSettings.ScrollGesturesEnabled = true;
+            googleMap.UiSettings.ZoomControlsEnabled = true;
             _handler.OnMapReady(googleMap);
         }
     }

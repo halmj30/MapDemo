@@ -36,6 +36,7 @@ namespace MapDemo.Handlers
 
         public static void MapMapType(IMapHandler handler, IMap map)
         {
+            /*
             switch (map.MapType)
             {
                 case MapType.Street:
@@ -48,12 +49,14 @@ namespace MapDemo.Handlers
                     handler.PlatformView.MapType = MKMapType.Hybrid;
                     break;
             }
+            */
+            handler.PlatformView.MapType = MKMapType.Hybrid;
         }
 
         public static void MapIsShowingUser(IMapHandler handler, IMap map)
         {
 #if !MACCATALYST
-            if (map.IsShowingUser)
+            if ( true /*map.IsShowingUser*/)
             {
 #pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
                 MapHandler? mapHandler = handler as MapHandler;
@@ -61,22 +64,26 @@ namespace MapDemo.Handlers
                 mapHandler?._locationManager?.RequestWhenInUseAuthorization();
             }
 #endif
-            handler.PlatformView.ShowsUserLocation = map.IsShowingUser;
+            handler.PlatformView.ShowsUserLocation = true; //hardcode so that it always shows
+            //handler.PlatformView.ShowsUserLocation = map.IsShowingUser;
         }
 
         public static void MapHasScrollEnabled(IMapHandler handler, IMap map)
         {
-            handler.PlatformView.ScrollEnabled = map.HasScrollEnabled;
+            handler.PlatformView.ScrollEnabled = true;
+            //handler.PlatformView.ScrollEnabled = map.HasScrollEnabled;
         }
 
         public static void MapHasTrafficEnabled(IMapHandler handler, IMap map)
         {
-            handler.PlatformView.ShowsTraffic = map.HasTrafficEnabled;
+            handler.PlatformView.ShowsTraffic = false; //hardcoded so it doesnt show
+            //handler.PlatformView.ShowsTraffic = map.HasTrafficEnabled;
         }
 
         public static void MapHasZoomEnabled(IMapHandler handler, IMap map)
         {
-            handler.PlatformView.ZoomEnabled = map.HasZoomEnabled;
+            handler.PlatformView.ZoomEnabled = true;
+            //handler.PlatformView.ZoomEnabled = map.HasZoomEnabled;
         }
     }
 }
